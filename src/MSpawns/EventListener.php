@@ -47,7 +47,7 @@ class EventListener extends PluginBase implements Listener{
     	$this->cfg = $this->plugin->getConfig()->getAll();
     	$player = $event->getPlayer();
     	//Check if the victim is a Player
-    	if($player instanceof Player){
+    	if($player instanceof Player && isset($this->cfg["teleport-on-death"])){
     		//Teleport Player on Death: 1 = Teleport to spawn 2 = Teleport to Hub
     		if($this->cfg["teleport-on-death"] == 1){
     			//Check if spawn exists
